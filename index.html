@@ -273,7 +273,7 @@
     </div>
     <div class="card" style="margin-top:18px;">
       <h3>Detalhamento do "Outro" em "Como você conheceu o Alana?"</h3>
-      <p class="section-desc" style="margin-bottom:14px;">38 respostas de texto livre, lidas uma a uma e agrupadas por padrão — inclui indicações de menor volume que, isoladas, passariam despercebidas (LinkedIn, YouTube, Google/site).</p>
+      <p class="section-desc" style="margin-bottom:14px;">66 respostas de texto livre, lidas uma a uma e agrupadas por padrão — inclui indicações de menor volume que, isoladas, passariam despercebidas (LinkedIn, YouTube, Google/site).</p>
       <div class="chart-wrap short"><canvas id="chart-conheceu-outro"></canvas></div>
     </div>
   </section>
@@ -287,7 +287,7 @@
         <h3>O que você mais precisa hoje?</h3>
         <div class="chart-wrap"><canvas id="chart-precisa"></canvas></div>
         <p class="section-desc" style="margin:14px 0 0; font-size:.82rem;">Quem marcou <strong>"Todas as anteriores"</strong> quis dizer que precisa de tudo isso ao mesmo tempo: Info confiável, Dicas práticas, Apoio/comunidade, Inspiração e Materiais para trabalho.</p>
-        <p class="section-desc" style="margin:8px 0 0; font-size:.82rem;">As 5 respostas "Outro" aqui foram muito diversas para virar categoria própria — falam de divulgar um projeto pessoal, formar outros educadores e aprofundar pesquisa. Nenhum padrão se repetiu.</p>
+        <p class="section-desc" style="margin:8px 0 0; font-size:.82rem;">As 6 respostas "Outro" aqui foram muito diversas para virar categoria própria — falam de divulgar um projeto pessoal, formar outros educadores e aprofundar pesquisa. Nenhum padrão se repetiu.</p>
       </div>
       <div class="card"><h3>Temas de maior interesse</h3><div class="chart-wrap tall"><canvas id="chart-temas"></canvas></div></div>
       <div class="card">
@@ -296,6 +296,29 @@
         <p class="section-desc" style="margin:14px 0 0; font-size:.82rem;">Quem marcou <strong>"Todas as anteriores"</strong> valoriza todos estes formatos juntos: Dicas práticas, Reflexão aprofundada, Inspiração, Informativo e Opinião do Alana.</p>
       </div>
       <div class="card"><h3>Formato de consumo preferido</h3><div class="chart-wrap"><canvas id="chart-formato"></canvas></div></div>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h3>"Educação de quê? Natureza de quê?" — leitura qualitativa de 1ª camada</h3>
+      <p class="section-desc" style="margin-bottom:6px;">Educação (186 pessoas) e Natureza (134) são os temas mais marcados, mas o formulário não pergunta qual ângulo específico interessa dentro de cada um. Para dar uma primeira pista, cruzamos quem marcou cada tema com o que essa mesma pessoa escreveu na pergunta aberta, e procuramos por subtemas recorrentes.</p>
+      <div class="callout" style="margin-top:10px; margin-bottom:20px;">
+        <div class="dot"></div>
+        <div><strong>Leia com cautela:</strong> só 176 de 186 pessoas de "Educação" e 125 de 134 de "Natureza" escreveram algo na pergunta aberta — e a maioria falou sobre <em>formato</em> de conteúdo (vídeo, carrossel, dica prática), não sobre o assunto em si. Os números abaixo são o quanto cada subtema apareceu nesse texto livre (uma pessoa pode aparecer em mais de um, ou em nenhum) — direcionais, não uma medição confiável de "o que educação/natureza significa" para a maioria. Isso é uma lacuna real da pesquisa: o formulário não tem uma pergunta de aprofundamento por tema.</div>
+      </div>
+      <div class="grid grid-2">
+        <div>
+          <h3 style="font-size:.95rem;">Dentro de "Educação" (176 respostas lidas)</h3>
+          <div class="chart-wrap short"><canvas id="chart-qual-educacao"></canvas></div>
+        </div>
+        <div>
+          <h3 style="font-size:.95rem;">Dentro de "Natureza" (125 respostas lidas)</h3>
+          <div class="chart-wrap short"><canvas id="chart-qual-natureza"></canvas></div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:20px; border-left:4px solid var(--purple);">
+        <div class="dot" style="background:var(--purple);"></div>
+        <div><strong>Próximo passo sugerido (hipótese testável):</strong> mandar uma micro-enquete de 1 pergunta, só para quem marcou "Educação" ou "Natureza", com as opções acima como resposta fechada (ex.: "dentro de Educação, o que mais te interessa: educação infantil, inclusão, políticas públicas, parentalidade, antirracismo ou telas?"). <strong>Sinal de sucesso:</strong> taxa de resposta acima de 20% já dá um n suficiente para virar pauta de conteúdo do próximo trimestre com confiança — abaixo disso, o tema seguiria tratado de forma genérica como hoje.</div>
+      </div>
     </div>
   </section>
 
@@ -352,38 +375,38 @@ const DADOS = {
   meta: {
     fonte: "Pesquisa de Audiência via Instagram/DM — planilha [ALANA] PESQUISA DE AUDIÊNCIA (Google Sheets, conectado)",
     periodo: "Período de coleta: [preencher data de início–fim]", // TODO: inserir período real
-    amostra: 382, // linhas 46–430 da planilha, após remover 3 registros-duplicata quase vazios
+    amostra: 590, // linhas 46–641 da planilha, após remover 6 registros-duplicata quase vazios
     geradoEm: "17/09/2026"
   },
 
   // ---- ABA 0: VISÃO GERAL ----
   geral: {
-    totalRespondentes: 382,
-    percentComFilhos: 30,          // "Tenho filhos" em Relação com Crianças (113/382)
-    percentTopaComunidade: 65,     // "Participaria da Comunidade" (250/382)
+    totalRespondentes: 590,
+    percentComFilhos: 29,          // "Tenho filhos" em Relação com Crianças (171/590)
+    percentTopaComunidade: 64,     // "Participaria da Comunidade" (377/590)
     temaMaisCitado: "Educação",
-    temaMaisCitadoPct: 32,         // 123/382
-    formatoPreferido: "Conteúdos aprofundados (40%)",
-    qualidadeNota: "N = 382, lido diretamente da planilha conectada via Google Drive (linhas 46–430). As linhas 2–45 (44 registros de teste da própria equipe) foram excluídas, e 3 registros duplicados quase vazios (mesma pessoa, segunda submissão em branco) foram removidos. Campos não preenchidos pelo respondente aparecem como “Não informado” nos gráficos, em vez de serem descartados silenciosamente. Todos os totais por pergunta foram conferidos um a um e batem exatamente com N = 382. Em relação à última atualização (N = 340), chegaram 42 respostas novas — nenhum dado antigo foi perdido ou sobrescrito, apenas conferido de novo. As respostas 'Outro' de 'Como conheceu', 'Temas de interesse' e 'O que te trouxe ao Alana' foram lidas manualmente uma a uma e reclassificadas em categorias próprias (ver abas Jornada e Necessidades)."
+    temaMaisCitadoPct: 32,         // 186/590
+    formatoPreferido: "Conteúdos aprofundados (41%)",
+    qualidadeNota: "N = 590, lido diretamente da planilha conectada via Google Drive (linhas 46–641). As linhas 2–45 (44 registros de teste da própria equipe) foram excluídas, e 6 registros duplicados quase vazios (mesma pessoa, segunda submissão em branco) foram removidos. Campos não preenchidos pelo respondente aparecem como “Não informado” nos gráficos. Todos os totais por pergunta foram conferidos um a um e batem exatamente com N = 590 — pente-fino refeito do zero nesta rodada. Em relação à última atualização (N = 589), chegou só 1 resposta nova; conferi e nenhum texto novo apareceu nos campos 'Outro', então as categorizações qualitativas seguem as mesmas."
   },
 
   // ---- ABA 1: PERFIL DO RESPONDENTE ----
   perfil: {
     faixaEtaria: {
       labels: ["19 a 24", "25 a 34", "35 a 44", "45 a 54", "55+", "Não informado"],
-      valores: [18, 50, 162, 107, 41, 4]
+      valores: [22, 60, 227, 192, 85, 4]
     },
     regiao: {
       labels: ["Sudeste", "Sul", "Nordeste", "Centro-Oeste", "Norte", "Fora do Brasil", "Não informado"],
-      valores: [204, 61, 60, 35, 12, 6, 4]
+      valores: [325, 98, 86, 45, 22, 10, 4]
     },
     relacaoCriancas: {
       labels: ["Trabalho c/ crianças", "Tenho filhos", "Convivo em família", "Não convivo", "Não informado"],
-      valores: [209, 113, 48, 8, 4]
+      valores: [329, 171, 68, 15, 7]
     },
     papel: {
       labels: ["Educador(a)", "Família", "Área de saúde", "Não informado"],
-      valores: [224, 80, 33, 45]
+      valores: [347, 120, 55, 68]
     }
   },
 
@@ -391,23 +414,21 @@ const DADOS = {
   jornada: {
     comoConheceu: {
       labels: ["Instagram", "Escola/Trabalho", "Outro", "Indicação", "Não informado", "Evento"],
-      valores: [182, 90, 38, 38, 19, 15]
+      valores: [297, 120, 66, 48, 32, 27]
     },
     acoesRealizadas: {
       labels: ["Compartilhei post", "Usei materiais", "Só acompanho", "Não informado", "Eventos presenciais", "Participei de curso", "Eventos online"],
-      valores: [221, 57, 52, 21, 15, 11, 5]
+      valores: [329, 95, 88, 35, 20, 14, 9]
     },
     motivacaoEntrada: {
-      labels: ["Sobre infância", "Prática profissional", "Causas sociais", "Cuidar das crianças", "Múltiplos / quis marcar tudo", "Outro específico", "Não informado"],
-      valores: [118, 92, 91, 59, 8, 6, 8]
+      labels: ["Sobre infância", "Causas sociais", "Prática profissional", "Cuidar das crianças", "Múltiplos / quis marcar tudo", "Outro específico", "Não informado"],
+      valores: [178, 147, 143, 89, 13, 7, 13]
     },
-    // Detalhamento das 38 respostas "Outro" em "Como você conheceu o Alana?",
+    // Detalhamento das 66 respostas "Outro" em "Como você conheceu o Alana?",
     // lidas uma a uma e agrupadas por padrão (nenhuma delas é descartada).
-    // Ex.: "LinkedIn", "YouTube", "Faculdade", "Google" viraram categorias
-    // próprias em vez de ficarem escondidas dentro de um "Outro" genérico.
     comoConheceuOutroDetalhe: {
-      labels: ["Pesquisa acadêmica / Faculdade / Cursos", "Trabalho ou militância na causa", "Vínculo histórico com o Alana", "Filmes/documentários", "Amigos (fora da opção Indicação)", "YouTube", "Busca online (Google/Site)", "LinkedIn", "Não recorda"],
-      valores: [10, 7, 5, 4, 3, 3, 2, 2, 2]
+      labels: ["Pesquisa acadêmica / Faculdade / Cursos", "Trabalho ou militância na causa", "Vínculo histórico com o Alana", "Filmes/documentários/podcast", "Amigos ou família (fora da opção Indicação)", "Não recorda", "YouTube", "Busca online (Google/Site)", "LinkedIn", "Outro pessoal/específico", "Evento (mencionado via campo Outro)"],
+      valores: [15, 12, 11, 6, 7, 4, 3, 3, 2, 2, 1]
     }
   },
 
@@ -415,19 +436,34 @@ const DADOS = {
   necessidades: {
     maisPrecisa: {
       labels: ["Todas as anteriores", "Info confiável", "Inspiração", "Apoio/comunidade", "Materiais para trabalho", "Dicas práticas", "Não informado", "Outro"],
-      valores: [228, 51, 25, 22, 20, 19, 12, 5]
+      valores: [349, 82, 39, 38, 33, 25, 18, 6]
     },
     temasInteresse: {
-      labels: ["Educação", "Natureza", "Crianças e telas", "Inclusão", "Antirracismo", "Saúde", "Não informado", "Múltiplos / querem tudo", "Direitos e ECA", "Outro específico", "Saúde mental e corporal"],
-      valores: [123, 88, 46, 40, 29, 16, 16, 14, 5, 3, 2]
+      labels: ["Educação", "Natureza", "Crianças e telas", "Inclusão", "Antirracismo", "Saúde", "Não informado", "Múltiplos / querem tudo", "Outro específico", "Direitos e ECA", "Saúde mental e corporal"],
+      valores: [186, 134, 67, 67, 48, 26, 27, 20, 7, 5, 3]
     },
     tipoConteudo: {
-      labels: ["Todas as anteriores", "Reflexão aprofundada", "Informativo", "Inspiração", "Não informado", "Dicas práticas", "Opinião do Alana", "Outro"],
-      valores: [235, 93, 17, 13, 12, 6, 5, 1]
+      labels: ["Todas as anteriores", "Reflexão aprofundada", "Informativo", "Não informado", "Inspiração", "Dicas práticas", "Opinião do Alana", "Outro"],
+      valores: [356, 147, 28, 19, 15, 15, 9, 1]
     },
     preferenciaConsumo: {
       labels: ["Aprofundados", "Carrosséis", "Vídeos curtos", "Posts rápidos", "Não informado"],
-      valores: [151, 102, 76, 39, 14]
+      valores: [241, 158, 112, 55, 24]
+    },
+    // Leitura qualitativa de 1ª camada (metodologia e ressalva completas no
+    // texto do card): baseada nas 186 pessoas de "Educação" e 134 de
+    // "Natureza" que também responderam à pergunta aberta. Números
+    // inalterados nesta rodada — a única resposta nova da planilha não
+    // trouxe texto livre novo nesses dois grupos.
+    qualitativoEducacao: {
+      baseTotal: 186, baseComTexto: 176,
+      labels: ["Educação infantil / primeira infância / creche", "Educação inclusiva / crianças com deficiência", "Políticas públicas / legislação educacional", "Parentalidade / educação em casa / família", "Antirracismo dentro da educação", "Telas e tecnologia na educação"],
+      valores: [17, 10, 8, 7, 6, 6]
+    },
+    qualitativoNatureza: {
+      baseTotal: 134, baseComTexto: 125,
+      labels: ["Natureza na cidade / urbanismo", "Desemparedamento / brincar livre ao ar livre", "Crise climática / sustentabilidade", "Vínculo com a natureza / bem-estar", "Educação ambiental formal"],
+      valores: [7, 3, 3, 3, 3]
     }
   },
 
@@ -435,20 +471,18 @@ const DADOS = {
   comunidade: {
     interesse: {
       labels: ["Participaria da comunidade", "Prefere só acompanhar", "Não respondeu"],
-      valores: [250, 87, 45]
+      valores: [377, 136, 77]
     },
     porFaixaEtaria: {
       labels: ["19 a 24", "25 a 34", "35 a 44", "45 a 54", "55+", "Não informado"],
-      participaria:   [11, 36, 104, 77, 22, 0],
-      soAcompanha:    [4,  7,  36,  24, 16, 0],
-      naoRespondeu:   [3,  7,  22,  6,  3,  4]
+      participaria:   [13, 43, 150, 124, 47, 0],
+      soAcompanha:    [4,  8,  47,  48, 29, 0],
+      naoRespondeu:   [5,  9,  30,  20, 9,  4]
     }
   },
 
   // ---- ABA 5: VOZ DO PÚBLICO ----
   vozPublico: {
-    // Frequências calculadas a partir de termos-chave nas 341 respostas
-    // abertas não vazias (busca por radicais de palavra no texto bruto).
     nuvemPalavras: [
       {t:"Educação", p:201}, {t:"Infância", p:90}, {t:"Natureza", p:69},
       {t:"Formação de professores", p:46}, {t:"Dados e pesquisas", p:33},
@@ -632,6 +666,18 @@ function initNecessidadesCharts(){
     type:'doughnut',
     data:{ labels:n.preferenciaConsumo.labels, datasets:[{ data:n.preferenciaConsumo.valores, backgroundColor:PALETA, borderWidth:2, borderColor: getComputedStyle(document.documentElement).getPropertyValue('--card') }]},
     options: baseOptions({ plugins:{legend:{position:'bottom', labels:{boxWidth:12, color:corTexto()}}}, cutout:'62%' })
+  });
+
+  new Chart(document.getElementById('chart-qual-educacao'), {
+    type:'bar',
+    data:{ labels:n.qualitativoEducacao.labels, datasets:[{ data:n.qualitativoEducacao.valores, backgroundColor:PALETA[3], borderRadius:8 }]},
+    options: baseOptions({ indexAxis:'y', plugins:{legend:{display:false}}, scales:{ x:{beginAtZero:true, ticks:{stepSize:2}, grid:{color:corLinha()}}, y:{grid:{display:false}} } })
+  });
+
+  new Chart(document.getElementById('chart-qual-natureza'), {
+    type:'bar',
+    data:{ labels:n.qualitativoNatureza.labels, datasets:[{ data:n.qualitativoNatureza.valores, backgroundColor:PALETA[1], borderRadius:8 }]},
+    options: baseOptions({ indexAxis:'y', plugins:{legend:{display:false}}, scales:{ x:{beginAtZero:true, ticks:{stepSize:1}, grid:{color:corLinha()}}, y:{grid:{display:false}} } })
   });
 }
 
